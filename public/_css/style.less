@@ -1,0 +1,26 @@
+@cor: blue;
+@cor_cinza: rgb(92, 92, 92);
+@tamanho: 15px;
+
+body{
+    background-color: @cor_cinza;
+}
+
+h1{
+    .cores('h1');
+}
+
+p{
+    .cores('p');
+}
+
+.cores(@tag){
+    color: @cor * 0.8;
+    & when (@tag = 'p'){
+        font-size: @tamanho * 1.2;
+    }
+    & when (@tag = 'h1'){
+        text-shadow: 2px 5px 1px @cor;
+        font-size: @tamanho * 3.2;
+    }
+}
